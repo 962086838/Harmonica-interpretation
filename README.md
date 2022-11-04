@@ -1,12 +1,12 @@
 # Code for "Consistent and Truthful Interpretation with Fourier Analysis"
 
 
-## Environment requirement
-We run our code on a Ubuntu 18.04 machine with 4 Nvidia 2080 Ti graphic cards.
+## Environment settings 
+We run our code on a Ubuntu 18.04 machine with 4 Nvidia 2080 Ti gpus.
 The CUDA version should be `10.2`. 
 You can use `nvcc --version` to check CUDA version.
 
-We recommend to use conda environment and the environment is provided. 
+We recommend to use conda environment and the environment configuration file is provided as below:
 
 ```
 conda env create -f environment.yml
@@ -20,7 +20,7 @@ python -m spacy download en_core_web_sm
 cd SST2
 python sst2_train.py --long_sentence_trucate 50
 ```
-It will save model files which are latter to be interpreted.
+It will save model binary files which are latter to be interpreted.
 
 ### Second order Harmonica
 ```
@@ -99,7 +99,7 @@ python imdb_baselines_second_order.py --algorithm shaptaylor
 ```
 cd Image
 ```
-We use the official PyTorch model so we do not need to train a classifier.
+We use the official PyTorch pretrained model parameters,so we do not need to train from scratch.
 ### Second order Harmonica
 ```
 python image-load-second.py --n_superpixels 16 --samples_min 128
